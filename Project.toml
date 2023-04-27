@@ -3,6 +3,12 @@ uuid = "3d61700d-6e5b-419a-8e22-9c066cf00468"
 authors = ["Paul Tiede <ptiede91@gmail.com> and contributors"]
 version = "1.0.0-DEV"
 
+[deps]
+CondaPkg = "992eb4ea-22a4-4c89-a5bb-47a3300528ab"
+PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
+StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
+TypedTables = "9d95f2ec-7b3d-5a63-8d20-e2491e220bb9"
+
 [compat]
 julia = "1.7"
 
