@@ -1,0 +1,13 @@
+name = "EHTImaging"
+uuid = "3d61700d-6e5b-419a-8e22-9c066cf00468"
+authors = ["Paul Tiede <ptiede91@gmail.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.7"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
