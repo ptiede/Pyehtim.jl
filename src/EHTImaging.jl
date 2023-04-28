@@ -1,6 +1,7 @@
 module EHTImaging
 
-using PythonCall
+using Reexport
+@reexport using PythonCall
 using TypedTables
 const ehtim = PythonCall.pynew()
 
