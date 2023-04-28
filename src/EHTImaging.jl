@@ -7,7 +7,7 @@ const ehtim = PythonCall.pynew()
 export ehtim,
        get_datatable, get_arraytable, get_scantable,
        get_source, get_bw, get_fr_angles, get_radec,
-       get_rf, get_mjd
+       get_rf, get_mjd, load_uvfits_and_array
 
 
 """
@@ -64,7 +64,7 @@ function get_fr_angles(ehtobs)
 end
 
 """
-    load_ehtim_uvfits(uvfile, arrayfile=nothing; kwargs...)
+    load_uvfits_and_array(uvfile, arrayfile=nothing; kwargs...)
 
 Load a uvfits file with eht-imaging and returns a eht-imaging `Obsdata`
 object. You can optionally pass an array file as well that will load
@@ -72,8 +72,7 @@ additional information such at the telescopes field rotation information
 with the arrayfile. This is expected to be an eht-imaging produced array
 or antenna file.
 """
-function load_ehtim_uvfits(uvfile, arrayfile=nothing; kwargs...)
-    PythonCall.pyisnull(ehtim) && load_ehtim()
+function load_uvfits_and_array(uvfile, arrayfile=nothing; kwargs...)
     obs = ehtim.obsdata.load_uvfits(uvfile; kwargs...)
     if arrayfile !== nothing
         tarr = ehtim.io.load.load_array_txt(arrayfile).tarr
