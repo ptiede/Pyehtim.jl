@@ -7,7 +7,9 @@
 
 
 This is a thin wrapper around the excellent [eht-imaging](https://github.com/achael/eht-imaging) package.
-We use [PythonCall](https://github.com/cjdoris/PythonCall.jl) to interface with eht-imaging. The main export
+[PythonCall](https://github.com/cjdoris/PythonCall.jl) is used to interface with eht-imaging. The main export
 is the `ehtim` object that contains the ehtim module. This means that all the usual `eht-imaging` commands
 should work identically to how they work in Python.
+
+
 
