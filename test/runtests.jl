@@ -1,8 +1,8 @@
-using EHTImaging
+using Pyehtim
 using PythonCall
 using Test
 
-@testset "EHTImaging.jl" begin
+@testset "Pyehtim.jl" begin
     # Write your tests here.
     obs = load_uvfits_and_array(joinpath(@__DIR__, "SR1_M87_2017_096_hi_hops_netcal_StokesI.uvfits"))
 

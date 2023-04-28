@@ -1,16 +1,16 @@
-using EHTImaging
+using Pyehtim
 using Documenter
 
-DocMeta.setdocmeta!(EHTImaging, :DocTestSetup, :(using EHTImaging); recursive=true)
+DocMeta.setdocmeta!(Pyehtim, :DocTestSetup, :(using Pyehtim); recursive=true)
 
 makedocs(;
-    modules=[EHTImaging],
+    modules=[Pyehtim],
     authors="Paul Tiede <ptiede91@gmail.com> and contributors",
-    repo="https://github.com/ptiede/EHTImaging.jl/blob/{commit}{path}#{line}",
-    sitename="EHTImaging.jl",
+    repo="https://github.com/ptiede/Pyehtim.jl/blob/{commit}{path}#{line}",
+    sitename="Pyehtim.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://ptiede.github.io/EHTImaging.jl",
+        canonical="https://ptiede.github.io/Pyehtim.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -20,6 +20,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/ptiede/EHTImaging.jl",
+    repo="github.com/ptiede/Pyehtim.jl",
     devbranch="main",
 )

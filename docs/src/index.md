@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = EHTImaging
+CurrentModule = Pyehtim
 ```
 
-# EHTImaging
+# Pyehtim
 
-Documentation for [EHTImaging](https://github.com/ptiede/EHTImaging.jl).
+Documentation for [Pyehtim](https://github.com/ptiede/Pyehtim.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [EHTImaging]
+Modules = [Pyehtim]
 ```

@@ -1,4 +1,4 @@
-module EHTImaging
+module Pyehtim
 
 using Reexport
 @reexport using PythonCall

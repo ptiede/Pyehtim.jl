@@ -28,7 +28,7 @@ git-tree-sha1 = "58fea7c536acd71f3eef6be3b21c0df5f3df88fd"
 uuid = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 version = "0.27.24"
 
-[[deps.EHTImaging]]
+[[deps.Pyehtim]]
 path = ".."
 uuid = "3d61700d-6e5b-419a-8e22-9c066cf00468"
 version = "1.0.0-DEV"

@@ -56,6 +56,6 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using EHTImaging
-            DocMeta.setdocmeta!(EHTImaging, :DocTestSetup, :(using EHTImaging); recursive=true)
-            doctest(EHTImaging)'
+            using Pyehtim
+            DocMeta.setdocmeta!(Pyehtim, :DocTestSetup, :(using Pyehtim); recursive=true)
+            doctest(Pyehtim)'

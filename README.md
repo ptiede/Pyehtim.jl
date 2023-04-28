@@ -1,9 +1,9 @@
-# EHTImaging
+# Pyehtim
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ptiede.github.io/EHTImaging.jl/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ptiede.github.io/EHTImaging.jl/dev/)
-[![Build Status](https://github.com/ptiede/EHTImaging.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ptiede/EHTImaging.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/ptiede/EHTImaging.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/ptiede/EHTImaging.jl)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ptiede.github.io/Pyehtim.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ptiede.github.io/Pyehtim.jl/dev/)
+[![Build Status](https://github.com/ptiede/Pyehtim.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ptiede/Pyehtim.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/ptiede/Pyehtim.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/ptiede/Pyehtim.jl)
 
 
 This is a thin wrapper around the excellent [eht-imaging](https://github.com/achael/eht-imaging) package.
