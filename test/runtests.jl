@@ -1,4 +1,5 @@
 using EHTImaging
+using PythonCall
 using Test
 
 @testset "EHTImaging.jl" begin
