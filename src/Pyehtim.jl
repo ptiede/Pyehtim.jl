@@ -8,7 +8,8 @@ const ehtim = PythonCall.pynew()
 export ehtim,
        get_datatable, get_arraytable, get_scantable,
        get_source, get_bw, get_fr_angles, get_radec,
-       get_rf, get_mjd, load_uvfits_and_array
+       get_rf, get_mjd, load_uvfits_and_array, 
+       scan_average
 
 
 """
@@ -46,6 +47,35 @@ function get_arraytable(obs)
         fr_offset      = deg2rad.(pyconvert(Vector, obs.tarr["fr_off"])),
     )
 end
+       
+"""
+    scan_average(obs)
+
+This homogenizes the scan times for an eht-imaging `Obsdata` object. This is needed
+because eht-imaging has a bug that will sometimes create very small scans and
+this can mess up both the closure construction and the gain scan times.
+Note that this is only a problem if we
+are fitting **scan averaged** data.
+"""
+function scan_average(obs)
+    obsc = obs.copy()
+    obsc.add_scans()
+    obsc = obsc.avg_coherent(0.0, scan_avg=true)
+    stimes = pyconvert(Matrix, obsc.scans)
+    times = pyconvert(Vector, obsc.data["time"])
+    @info "Before homogenizing we have $(length(unique(times))) unique times"
+
+    for r in eachrow(stimes)
+        sbegin, send = r
+        indices = findall(x-> (sbegin < x <= send), times)
+        times[indices] .= (send+sbegin)/2
+    end
+    obsc.data["time"] = pylist(times)
+    @info "After homogenizing we have $(length(unique(pyconvert(Vector, obsc.data["time"])))) unique times"
+
+    return obsc
+end
+
 
 """
     get_fr_angles(obs)
