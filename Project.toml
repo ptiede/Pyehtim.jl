@@ -1,7 +1,7 @@
 name = "Pyehtim"
 uuid = "3d61700d-6e5b-419a-8e22-9c066cf00468"
 authors = ["Paul Tiede <ptiede91@gmail.com> and contributors"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 CondaPkg = "992eb4ea-22a4-4c89-a5bb-47a3300528ab"
