@@ -15,6 +15,8 @@ using Test
     src   = get_source(obs)
     rf    = get_rf(obs)
     bw    = get_bw(obs)
+    
+    scan_average(obs)
 
     @test pyconvert(Bool, bw == obs.bw)
     @test pyconvert(Bool, rf == obs.rf)
