@@ -1,6 +1,6 @@
 [deps]
 pandas = "<2"
-numpy = "<=1.23"
+numpy = "<=1.24"
 python = ">=3.6,<=3.10"
 
 [pip.deps]
