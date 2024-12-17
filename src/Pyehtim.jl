@@ -2,7 +2,6 @@ module Pyehtim
 
 using Reexport
 @reexport using PythonCall
-using TypedTables
 const ehtim = PythonCall.pynew()
 
 export ehtim,
@@ -26,7 +25,7 @@ function get_datatable(obs)
         pyconvert(Vector, getindex(obsamps, i))
     end
 
-    return Table(NamedTuple{nj}(Tuple(d)))
+    return NamedTuple{nj}(Tuple(d))
 end
 
 """
@@ -35,7 +34,7 @@ end
 Construct the array table for a given eht-imaging obsdata object.
 """
 function get_arraytable(obs)
-    return Table(
+    return (
         sites = pyconvert(Vector{Symbol}, obs.tarr["site"]),
         X     = pyconvert(Vector, obs.tarr["x"]),
         Y     = pyconvert(Vector, obs.tarr["y"]),
@@ -59,7 +58,7 @@ are fitting **scan averaged** data.
 """
 function scan_average(obs)
     obsc = obs.copy()
-    obsc.add_scans()
+    obsc.add_scans() # Add the scans before averaging otherwise the scan table is messed up!
     obsc = obsc.avg_coherent(0.0, scan_avg=true)
     stimes = pyconvert(Matrix, obsc.scans)
     times = pyconvert(Vector, obsc.data["time"])
@@ -133,9 +132,11 @@ get_bw(obs) = pyconvert(Float64, obs.bw)
 Constructs the scan table of a given observation.
 """
 function get_scantable(obs)
-    obs.add_scans()
+    if PythonCall.Convert.pyisnone(obs.scans)
+        obs.add_scans()
+    end
     sc = pyconvert(Matrix, obs.scans)
-    return Table((start=sc[:,1], stop = sc[:,2]))
+    return ((start=sc[:,1], stop = sc[:,2]))
 end
 
 
