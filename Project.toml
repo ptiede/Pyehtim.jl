@@ -1,7 +1,7 @@
 name = "Pyehtim"
 uuid = "3d61700d-6e5b-419a-8e22-9c066cf00468"
 authors = ["Paul Tiede <ptiede91@gmail.com> and contributors"]
-version = "0.2.2"
+version = "0.2.3"
 
 [deps]
 CondaPkg = "992eb4ea-22a4-4c89-a5bb-47a3300528ab"
@@ -12,7 +12,7 @@ Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
 CondaPkg = "0.2"
 PythonCall = "0.9"
 Reexport = "1"
-julia = "1.7"
+julia = "1.10"
 
 [extras]
 PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
