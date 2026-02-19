@@ -11,6 +11,10 @@ export ehtim,
        scan_average
 
 
+
+removeesc(str) = Symbol(replace(str, r"[^a-zA-Z0-9\s]" => ""))
+
+
 """
     get_datatable(obs)
 
@@ -35,7 +39,7 @@ Construct the array table for a given eht-imaging obsdata object.
 """
 function get_arraytable(obs)
     return (
-        sites = Symbol.(replace.(pyconvert(Vector{String}, obs.tarr["site"]), Ref(r"[^a-zA-Z0-9\s]" => ""))),
+        sites = removeesc.(pyconvert(Vector{String}, obs.tarr["site"])),
         X     = pyconvert(Vector, obs.tarr["x"]),
         Y     = pyconvert(Vector, obs.tarr["y"]),
         Z     = pyconvert(Vector, obs.tarr["z"]),
